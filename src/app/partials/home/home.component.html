@@ -1,0 +1,64 @@
+<div class="container-12" style="margin-bottom: 100px;">
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin:5px;background-color: #041c42 !important;">
+    Create Bill
+  </button><br>
+  <div class="col-lg-12" style="margin:0 auto">
+    <div class="row">
+      <div class="card" style="width: 18rem;" *ngFor="let item of schools">
+        <img class="card-img-top" src="/assets/images/icon-cap.svg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text" style="    font-size: 20px;
+          font-weight: bold;"><strong>{{item.school}}</strong></p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Address: <strong>{{item.address}}</strong></p>
+            <p class="card-text">Amount: <strong>{{item.amount}}</strong></p>
+            <p class="card-text">Currency: <strong>{{item.currency}}</strong></p>
+          </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create New Bill</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="color:black">
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">School name</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="schoolName" [(ngModel)]="schoolName" aria-describedby="emailHelp" placeholder="Enter school name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">School Address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="address" [(ngModel)]="address" aria-describedby="emailHelp" placeholder="Enter Address">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Amount</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name="amount" [(ngModel)]="amount" aria-describedby="emailHelp" placeholder="Enter Address">
+                      <small>The currency will be in PESO</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Currency</label>
+                        <select class="form-control" id="sel1" name="currency" [(ngModel)]="currency">
+                            <option>PESO</option>
+                          </select> 
+                      </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button"  class="btn btn-primary"data-dismiss="modal" (click)="createSchool()">Save School</button>
+        </div>
+      </div>
+    </div>
+  </div>

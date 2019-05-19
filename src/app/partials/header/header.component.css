@@ -1,0 +1,33 @@
+.login-modal {
+  height: 311px;
+  width: 405px;
+}
+
+.meta-mask {
+  height: 127px;
+}
+
+.login-body {
+  position: relative;
+  text-align: center;
+}
+
+.icons {
+  position: relative;
+  width: 40px;
+  height: 48px;
+  float: left;
+  cursor: pointer;
+}
+
+.amt-span {
+  position: relative;
+  top: 16px;
+  color: #fff;
+}
+
+.btn-logout {
+  cursor: pointer;
+  top: 5px;
+  position: relative;
+}
